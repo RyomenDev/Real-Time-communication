@@ -6,7 +6,7 @@ const WebSocket = () => {
 
   const options = [
     { title: "📈 Stock Market Live Updates", path: "/stock-market" },
-    { title: "📢 Real-time Notifications", path: "/notifications" },
+    { title: "📢 Real-time Notifications", path: "/websocket/notification" },
     { title: "🎮 Multiplayer Gaming", path: "/multiplayer-game" },
     { title: "🚗 Live GPS Tracking", path: "/gps-tracking" },
     { title: "💬 Live Chat App", path: "/websocket/chat" },
