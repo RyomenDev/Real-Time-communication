@@ -1,8 +1,11 @@
-const express = require("express");
-const { WebSocketServer } = require("ws");
+import express from "express";
+import { WebSocketServer } from "ws";
+import cors from "cors";
 
 const app = express();
 const PORT = 5000;
+
+app.use(cors());
 
 // Create HTTP server
 const server = app.listen(PORT, () => {
