@@ -1,0 +1,17 @@
+{
+  "name": "server-websocket",
+  "version": "1.0.0",
+  "description": "**✔ Low Latency:** Ideal for real-time applications with minimal delay\r **✔ Persistent Connection:** Reduces overhead by avoiding repeated HTTP requests\r **✔ Efficient Bandwidth Usage:** Uses a single connection instead of polling\r **✔ Cross-Platform Compatibility:** Supported by most modern browsers and servers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "ws": "^8.18.1"
+  }
+}
