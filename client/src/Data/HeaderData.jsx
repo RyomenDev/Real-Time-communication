@@ -17,7 +17,7 @@ const HeaderData = {
   sideHeader: {
     navItems: [
       { name: "Home", slug: "/", active: true },
-      { name: "Websocket", slug: "#", active: true },
+      { name: "Websocket", slug: "/websocket", active: true },
       { name: "Socket.io", slug: "#", active: true },
       //   { name: "How to Use", slug: "#", active: true },
     ],

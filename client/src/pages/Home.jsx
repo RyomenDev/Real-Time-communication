@@ -1,4 +1,14 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
+  const technologies = [
+    { name: "WebSocket", color: "bg-blue-500", slug: "websocket" },
+    { name: "Socket.IO", color: "bg-green-500", slug: "socketio" },
+    { name: "SSE (Server-Sent Events)", color: "bg-purple-500", slug: "sse" },
+    { name: "gRPC", color: "bg-yellow-500", slug: "grpc" },
+    { name: "MQTT", color: "bg-red-500", slug: "mqtt" },
+  ];
+
   return (
     <div className="bg-gray-100 flex items-center justify-center min-h-screen p-6">
       <div className="max-w-5xl mx-auto text-center p-8 bg-white shadow-lg rounded-lg">
@@ -13,21 +23,16 @@ const Home = () => {
           and IoT projects.
         </p>
 
-        {/* Grid of Technologies */}
+        {/* Grid of Technologies with Links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-          {[
-            { name: "WebSocket", color: "bg-blue-500" },
-            { name: "Socket.IO", color: "bg-green-500" },
-            { name: "SSE (Server-Sent Events)", color: "bg-purple-500" },
-            { name: "gRPC", color: "bg-yellow-500" },
-            { name: "MQTT", color: "bg-red-500" },
-          ].map((tech, index) => (
-            <div
-              key={index}
-              className={`p-6 ${tech.color} text-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105`}
-            >
-              <h2 className="text-2xl font-semibold">{tech.name}</h2>
-            </div>
+          {technologies.map((tech, index) => (
+            <Link to={`${tech.slug}`} key={index}>
+              <div
+                className={`p-6 ${tech.color} text-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 cursor-pointer`}
+              >
+                <h2 className="text-2xl font-semibold">{tech.name}</h2>
+              </div>
+            </Link>
           ))}
         </div>
 
@@ -36,9 +41,6 @@ const Home = () => {
           <button className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 focus:ring-2 focus:ring-blue-300">
             Start Learning
           </button>
-          {/* <button className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg shadow hover:bg-gray-300 focus:ring-2 focus:ring-gray-300">
-            Documentation
-          </button> */}
         </div>
       </div>
     </div>

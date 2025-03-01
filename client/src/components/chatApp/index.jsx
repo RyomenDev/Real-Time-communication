@@ -10,8 +10,13 @@ const Chat = () => {
 
     ws.onopen = () => console.log("Connected to WebSocket");
 
-    ws.onmessage = (event) => {
-      setMessages((prev) => [...prev, event.data]);
+    ws.onmessage = async (event) => {
+      if (event.data instanceof Blob) {
+        const text = await event.data.text(); // Convert Blob to text
+        setMessages((prev) => [...prev, text]);
+      } else {
+        setMessages((prev) => [...prev, event.data]);
+      }
     };
 
     ws.onclose = () => console.log("Disconnected from WebSocket");
