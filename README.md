@@ -107,3 +107,5 @@ Not ideal for general-purpose web applications
 - Use **SSE** for simple, one-way real-time updates.
 - Use **gRPC** if integrating with microservices and efficiency is critical.
 - Use **MQTT** for IoT and real-time messaging in constrained networks.
+
+![Image](https://github.com/user-attachments/assets/d90f322e-bb8d-4d1d-8388-b1d6f715c0e0)
