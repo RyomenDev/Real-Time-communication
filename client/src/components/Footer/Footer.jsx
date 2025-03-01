@@ -25,7 +25,7 @@ function Footer() {
         </a>
       </div>
       <div className="copy-container text-center text-sm opacity-70">
-        &copy;2024 Made by Akash Mishra
+        &copy;2025 Made by Akash Mishra
       </div>
     </section>
   );
