@@ -1,14 +1,9 @@
 import { useState } from "react";
 import HeaderData from "../../Data/HeaderData.jsx";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { LogoutBtn, LoginButton } from "../../utils";
 
 const Header = () => {
   const navigate = useNavigate();
-  const authStatus = useSelector((state) => state.auth.status);
-  const userData = useSelector((state) => state.auth.userData);
-  const userName = userData?.name;
 
   const [isContactLanguageOpen, setIsContactLanguageOpen] = useState(false); // State to toggle contact and language visibility
   const { topHeader } = HeaderData;
@@ -70,18 +65,6 @@ const Header = () => {
             aria-label="Search"
           ></button>
         </form>
-      </div>
-      <div>
-        {authStatus ? (
-          <div className="flex gap-4">
-            <div className="text-2xl font-semibold">Hello, {userName}</div>
-            <LogoutBtn />
-          </div>
-        ) : (
-          <div>
-            <LoginButton />
-          </div>
-        )}
       </div>
 
       {/* Language Section (Visible on Mobile when Hamburger is clicked) */}

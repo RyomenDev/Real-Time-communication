@@ -17,19 +17,9 @@ const HeaderData = {
   sideHeader: {
     navItems: [
       { name: "Home", slug: "/", active: true },
-      { name: "Learn More", slug: "#", active: true },
-      { name: "About", slug: "#", active: true },
-      { name: "How to Use", slug: "#", active: true },
-    ],
-    authItems: (authStatus) => [
-      { name: "Support", slug: "#", active: true },
-      { name: "Login", slug: "/login", active: !authStatus },
-      {
-        name: "Logout",
-        slug: "/logout",
-        active: authStatus,
-        component: <button>Logout</button>, // Replace with your actual Logout button component
-      },
+      { name: "Websocket", slug: "#", active: true },
+      { name: "Socket.io", slug: "#", active: true },
+      //   { name: "How to Use", slug: "#", active: true },
     ],
   },
 };
