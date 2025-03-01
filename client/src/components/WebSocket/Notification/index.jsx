@@ -11,9 +11,47 @@ const Notification = () => {
       console.log("Connected to WebSocket");
     };
 
-    socket.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      setNotifications((prev) => [data, ...prev]);
+    // socket.onmessage = (event) => {
+    //   const data = JSON.parse(event.data);
+    //   setNotifications((prev) => [data, ...prev]);
+    // }; // for JSON
+
+    // socket.onmessage = async (event) => {
+    //   const reader = new FileReader();
+    //   reader.onload = () => {
+    //     try {
+    //       const data = JSON.parse(reader.result);
+    //       setNotifications((prev) => [data, ...prev]);
+    //     } catch (error) {
+    //       console.error("Error parsing JSON:", error);
+    //     }
+    //   };
+    //   reader.readAsText(event.data);
+    // };
+    socket.onmessage = async (event) => {
+      if (typeof event.data === "string") {
+        // If data is already a string, parse it directly
+        try {
+          const data = JSON.parse(event.data);
+          setNotifications((prev) => [data, ...prev]);
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+        }
+      } else if (event.data instanceof Blob) {
+        // If it's a Blob, read it as text
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const data = JSON.parse(reader.result);
+            setNotifications((prev) => [data, ...prev]);
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+        };
+        reader.readAsText(event.data);
+      } else {
+        console.error("Received unknown data type:", event.data);
+      }
     };
 
     socket.onclose = () => {
