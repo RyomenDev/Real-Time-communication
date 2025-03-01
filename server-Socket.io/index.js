@@ -27,6 +27,7 @@ io.on("connection", (socket) => {
 
   // Listen for new notifications from the client
   socket.on("sendNotification", (message) => {
+    console.log("New Notification:", message);
     const newNotification = { message, timestamp: new Date() };
     notifications.unshift(newNotification); // Add to the beginning
 

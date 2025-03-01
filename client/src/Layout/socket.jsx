@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-const WebSocketLayout = () => {
+const SocketLayout = () => {
   return (
     <div>
       <Outlet />
@@ -8,4 +8,4 @@ const WebSocketLayout = () => {
   );
 };
 
-export default WebSocketLayout;
+export default SocketLayout;
