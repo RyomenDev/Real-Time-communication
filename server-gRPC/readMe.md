@@ -24,12 +24,7 @@ This repository demonstrates **real-time communication** using **gRPC with Node.
 └── README.md          # Project Documentation
 ```
 
-## 🔧 Installation
-```bash
-git clone https://github.com/yourusername/grpc-realtime-chat.git
-cd grpc-realtime-chat
-npm install
-```
+## 🔧
 
 ## 📝 Define gRPC Protocol (chat.proto)
 ```proto
